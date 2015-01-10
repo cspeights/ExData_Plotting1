@@ -15,6 +15,7 @@ DateTime<-ymd_hms(DateTime) ##Convert into the proper format
 DateTime<-ymd_hms(DateTime)-hours(1) ##Subtract off the extra hour that was added on earlier
 
 png(filename = "plot3.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white")
+par(bg = "transparent")
 plot(DateTime,Sub1,type="l", ylab = "Energy sub metering", xlab ="")
 lines(DateTime,Sub2,col="red")
 lines(DateTime,Sub3,col="blue")

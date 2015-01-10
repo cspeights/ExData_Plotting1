@@ -7,7 +7,9 @@ Time <- hms(powerData$V2)
 GlobalActivePower <- powerData$V3
 Global_reactive_power <- powerData$V4
 Voltage <- powerData$V5
-
+Sub1<-powerData$V7
+Sub2<-powerData$V8
+Sub3<-powerData$V9
 
 Time <- Time+hours(1) ##Done so that the times starting with 0H show up properly
 
@@ -17,7 +19,7 @@ DateTime<-ymd_hms(DateTime) ##Convert into the proper format
 DateTime<-ymd_hms(DateTime)-hours(1) ##Subtract off the extra hour that was added on earlier
 
 png(filename = "plot4.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white")
-par(mfrow = c(2,2))
+par(mfrow = c(2,2), bg="transparent")
 
 plot(DateTime, GlobalActivePower, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
 plot(DateTime, Voltage, type = "l", xlab = "datetime")

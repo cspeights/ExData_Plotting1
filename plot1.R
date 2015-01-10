@@ -4,5 +4,6 @@ powerData<-fread("household_power_consumption.txt", na.strings="?", stringsAsFac
 GlobalActivePower <- powerData$V3
 
 png(filename = "plot1.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white")
+par(bg="transparent")
 hist(GlobalActivePower, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)") ##Plot the data
 dev.off()
